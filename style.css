@@ -1,0 +1,252 @@
+/* --- Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100..700;1,100..700&display=swap');
+
+/* --- Global Reset --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Jura;
+  scroll-behavior: smooth;
+}
+
+/* --- NAV BAR --- */
+.main-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 10px 20px;
+  z-index: 1000;
+  border-bottom-left-radius: 8px;
+}
+
+.nav {
+  justify-content: flex-end;
+  display: flex;
+  list-style: none;
+}
+
+.nav-item-custom {
+  font-weight: 700;
+  font-size: 20px;
+  color: black;
+  margin-left: 20px;
+  text-decoration: none;
+  font-family: Jura;
+}
+
+.nav-link {
+  color: black !important;
+}
+
+/* --- SLIDE STYLES --- */
+
+.slide {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+/* Slide 1 background */
+.bg-slide-1 {
+  background-image: url("bgpg1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Slide 2 background */
+.bg-slide-2 {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Ensure background fills the viewport */
+  background-color: #B49B2C40;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center content vertically and horizontally */
+}
+
+/* Slide 3 */
+.bg-slide-3 {
+  background-color: rgba(220, 53, 69, 0.6);
+}
+
+/* Contact section background */
+.bg-contact {
+  background-color: #f8f9fa;
+}
+
+/* --- CENTERED TEXT FOR SLIDES --- */
+.centered-text {
+  text-align: center;
+  color: white;
+}
+
+.centered-text h1 {
+  font-family: Josefin Slab;
+  font-weight: 700;
+  font-size: 4rem;
+}
+
+/* --- SLIDE 2 LAYOUT --- */
+.slide2-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  background-color: #B49B2C40;
+  z-index: -1; /* Make sure background stays behind the content */
+}
+
+/* Slide 2 Content (inside container) */
+.container {
+  position: absolute;
+  display: grid;
+  place-items: center;  /* Centers the content */
+  width: auto;  /* Let it adjust based on content */
+  max-width: 80%; /* Optional: Sets a max width to avoid excessive stretching */
+  height: auto; /* Optional: Adjust height based on content */
+  padding: 20px;  /* Optional: Add some padding for spacing */
+  text-align: center;  /* Ensure text is centered */
+  gap: 10px;  /* Reduce the gap between elements */
+}
+
+
+.slide2-content {
+  display: flex;
+  justify-content: center;  /* Center horizontally */
+  align-items: center;      /* Center vertically */
+  text-align: center;       /* Ensure text is centered */
+  gap: 20px;                /* Reduced the gap between the left and right sections (closer together) */
+  padding: 10px;            /* Reduced padding to make the content more compact */
+  width: 50%;          /* Optionally reduce width further (to keep it tight) */
+}
+
+/* Text for left and right content */
+.text-left,
+.text-right {
+  flex: 1;
+  color: black;
+  font-family: Jura;
+  font-weight: 700;
+  font-style: bold;
+  font-size: 20px;
+  line-height: 1.18;
+  letter-spacing: 0.2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Divider between left and right text */
+.divider {
+  width: 2px;
+  background-color: black;
+  border-radius: 1px;
+  align-self: stretch; /* Make divider stretch vertically */
+}
+
+/* Right text layout */
+.right-texts {
+  display: flex;
+  justify-content: space-between;
+  font-family: Jura;
+  margin-top: 10px;
+  width: 100%;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 20%;
+  color: black;
+}
+
+.right-left-text,
+.right-right-text {
+  width: 45%;
+  font-weight: 700;
+  font-family: Jura;
+  font-size: 20px;
+  line-height: 1.18;
+  letter-spacing: 0.2em;
+  text-align: left;
+}
+
+.right-left-text p,
+.right-right-text p {
+  color: black;  /* Cor inicial (preto) */
+  cursor: pointer;  /* Para indicar que pode ser interativo */
+  transition: text-decoration 0.3s ease;  /* Suaviza o efeito de sublinhado */
+}
+
+/* Quando qualquer um dos itens for hovered, todos terão o sublinhado */
+.right-left-text p:hover,
+.right-right-text p:hover {
+  text-decoration: underline;  /* Adiciona o sublinhado no hover */
+  text-decoration-color: rgb(155, 227, 255);  /* A cor do sublinhado */
+}
+
+.right-left-text:hover p,
+.right-right-text:hover p {
+  text-decoration: underline;  /* Adiciona o sublinhado quando o container é hovered */
+  text-decoration-color: rgb(155, 227, 255);
+}
+
+.right-texts{
+  display: flex;
+  justify-content: center;
+  gap: 40px;                
+  margin: 15px;
+  padding: 15px;
+    --b: 5px; /* thickness of the border */
+    --c: black; /* color of the border */
+    --w: 20px; /* width of border */
+ 
+    border: var(--b) solid #0000; /* space for the border */
+    --_g: #0000 90deg, var(--c) 0;
+    --_p: var(--w) var(--w) border-box no-repeat;
+ 
+    background: conic-gradient(
+                from 90deg at top var(--b) left var(--b),
+                var(--_g)
+            )
+            0 0 / var(--_p),
+        conic-gradient(from -90deg at bottom var(--b) right var(--b), var(--_g))
+            100% 100% / var(--_p);
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .slide2-content {
+    flex-direction: column;
+  }
+
+  .divider {
+    display: none;
+  }
+
+  .right-texts {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .right-left-text,
+  .right-right-text {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.highlight {
+  font-family: Jura;
+  font-size: 43px;
+  font-weight: bold;
+  color: #686931;
+}
