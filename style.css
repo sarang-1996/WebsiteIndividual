@@ -16,12 +16,10 @@ body {
 
 /* --- NAV BAR --- */
 .main-header {
-  position: fixed;
-  top: 0;
-  right: 0;
+  position: relative; /* ← Not fixed anymore */
   padding: 10px 20px;
-  z-index: 1000;
   border-bottom-left-radius: 8px;
+  background-color: transparent !important;
 }
 
 .nav {
@@ -143,7 +141,7 @@ body {
 
 /* Slide 2 Content (inside container) */
 .container {
-  position: absolute;
+  position: relative;
   display: grid;
   place-items: center;  /* Centers the content */
   width: auto;  /* Let it adjust based on content */
@@ -284,4 +282,110 @@ body {
   font-size: 43px;
   font-weight: bold;
   color: #686931;
+}
+
+@media (max-width: 768px) {
+  .main-header {
+    width: 100%;
+    padding: 10px;
+    background-color: none;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .nav-item-custom {
+    font-size: 16px;
+    margin-left: 0;
+  }
+}
+
+/* Hide hamburger by default */
+.hamburger {
+  display: none;
+  font-size: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: black;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .main-header {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: transparent !important; /* ✅ */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-container {
+    display: none;
+    width: 100%;
+    background-color: transparent !important; /* ✅ Optional, in case the container is the issue */
+  }
+
+  .nav-container.active {
+    display: block;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .nav-item-custom {
+    font-size: 18px;
+    margin-left: 0;
+    padding: 8px 0;
+    background: transparent !important; /* ✅ Just in case individual items have it */
+  }
+}
+
+/* 🔥 Nuke white backgrounds everywhere */
+.main-header,
+.nav-container,
+.nav,
+.nav-item-custom,
+.nav-link {
+  background-color: transparent !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* 🔥 Final white box purge for mobile nav */
+@media (max-width: 768px) {
+  .nav-container,
+  .nav,
+  .nav-item,
+  .nav-link,
+  .nav-item-custom,
+  .main-header {
+    background: none !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  ul.nav {
+    background: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    list-style: none;
+  }
+
+  .nav-container.active {
+    background: none !important;
+  }
 }
