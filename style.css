@@ -389,3 +389,159 @@ body {
     background: none !important;
   }
 }
+
+.custom-button {
+  padding: 18px 40px;
+  font-size: 22px;
+  font-family: Jura;
+  font-weight: 700;
+  color: white;
+  background-color: black;
+  border: 2px solid white;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  margin-right: 200px; /* ← instead of margin-left */
+  margin-left: 0;
+}
+
+.custom-button:hover {
+  background-color: white;
+  color: black;
+}
+
+/* Slide 4 background */
+.bg-slide-4 {
+  background-color: #B49B2C40;
+  background-image: url("floresta.jpg");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: 50% 100%; /* Cover only the right half */
+}
+
+.centered-text-4 {
+    font-family: Jura;
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+    font-weight: 700;
+    font-style: bold !important;
+    line-height: 1.18;
+    letter-spacing: 0.2em;
+    text-align: center;   /* Alinha o texto ao centro */
+    max-width: 600px;     /* Limita a largura do texto */
+    margin: 200px;       /* Centraliza o bloco de texto */
+    padding: 0 20px;      /* Espaçamento interno opcional para telas pequenas */
+}
+
+.container3 {
+    display: flex;
+    justify-content: flex-start; /* Alinha o conteúdo à direita */
+    align-items: center;       /* Centraliza verticalmente */
+    height: 100vh;             /* Altura do contêiner (100% da altura da tela) */
+    width: 100%;               /* Garante que o contêiner ocupe toda a largura */
+}
+
+.custom-button-2 {
+  padding: 18px 40px;
+  font-size: 22px;
+  font-family: Jura;
+  font-weight: 700;
+  color: rgb(0, 0, 0);
+  background-color: transparent;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 30px;
+  cursor: pointer;
+  margin-right: 200px;
+  margin-left: 0;
+}
+
+.bg-slide-4 {
+  background-color: #B49B2C40;
+  background-image: url("floresta.jpg");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: 50% 100%; /* Cover only the right half */
+}
+
+/*Slide 5*/
+
+.bg-slide-5 {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Ensure background fills the viewport */
+  background-image: url("blogbg.jpg");
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center content vertically and horizontally */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.centered-text-5 {
+    font-family: Jura;
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+    font-weight: 700;
+    font-style: bold !important;
+    line-height: 1.18;
+    letter-spacing: 0.2em;
+    text-align: center;   /* Alinha o texto ao centro */
+    max-width: 600px;     /* Limita a largura do texto */
+    margin: 200px;       /* Centraliza o bloco de texto */
+    padding: 0 20px;      /* Espaçamento interno opcional para telas pequenas */
+    text-align: center;
+}
+
+.custom-button-3 {
+  padding: 24px 120px;              /* 10px em cima/baixo, 80px nos lados */
+  font-size: 25px;
+  font-family: Jura;
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+  background-color: black;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 30px;
+  cursor: pointer;
+  margin-left: 0;
+}
+
+
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  font-size: 40px;
+  color: black;
+  text-decoration: none;
+  z-index: 999;
+  transition: transform 0.3s ease;
+}
+
+.back-to-top:hover {
+  transform: scale(1.2);
+}
+
+/*Footer*/
+
+footer{
+  background-color: black;
+  color:white;
+  text-align: center;
+}
+
+.social-icons {
+  margin: 10px 0;
+}
+
+.social-icons a {
+  color: grey;
+  margin: 0 10px;
+  font-size: 24px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: white; /* color on hover */
+}
