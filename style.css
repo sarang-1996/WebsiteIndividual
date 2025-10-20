@@ -1,6 +1,6 @@
 /* --- Fonts --- */
-@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100..700;1,100..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100..700;1,100..700&display=swap");
 
 /* --- Global Reset --- */
 * {
@@ -65,7 +65,7 @@ body {
   position: relative;
   width: 100%;
   height: 100vh; /* Ensure background fills the viewport */
-  background-color: #B49B2C40;
+  background-color: #b49b2c40;
   display: flex;
   justify-content: center;
   align-items: center; /* Center content vertically and horizontally */
@@ -75,9 +75,9 @@ body {
 .bg-slide-3 {
   background-color: #000000;
   background-image: url(caravana.jpg);
-  background-position: left center;  /* Posiciona a imagem à esquerda e centraliza verticalmente */
-  background-repeat: no-repeat;     /* Impede que a imagem se repita */
-  background-size: contain;         /* Ajusta a imagem para caber dentro do elemento */
+  background-position: left center; /* Posiciona a imagem à esquerda e centraliza verticalmente */
+  background-repeat: no-repeat; /* Impede que a imagem se repita */
+  background-size: contain; /* Ajusta a imagem para caber dentro do elemento */
 }
 
 /* --- CENTERED TEXT FOR SLIDES --- */
@@ -93,40 +93,38 @@ body {
 }
 
 .centered-text-3 {
-    font-family: Jura;
-    color: white;
-    font-size: 30px;
-    font-weight: 700;
-    font-style: bold;
-    line-height: 1.18;
-    letter-spacing: 0.2em;
-    text-align: right;  /* Alinha o texto à direita */
-    padding-right: 20px; /* Adiciona um pouco de espaçamento à direita */
+  font-family: Jura;
+  color: white;
+  font-size: 30px;
+  font-weight: 700;
+  font-style: bold;
+  line-height: 1.18;
+  letter-spacing: 0.2em;
+  text-align: right; /* Alinha o texto à direita */
+  padding-right: 20px; /* Adiciona um pouco de espaçamento à direita */
 }
 
 .container2 {
-    display: flex;
-    justify-content: flex-end; /* Alinha o conteúdo à direita */
-    align-items: center;       /* Centraliza verticalmente */
-    height: 100vh;             /* Altura do contêiner (100% da altura da tela) */
-    width: 100%;               /* Garante que o contêiner ocupe toda a largura */
+  display: flex;
+  justify-content: flex-end; /* Alinha o conteúdo à direita */
+  align-items: center; /* Centraliza verticalmente */
+  height: 100vh; /* Altura do contêiner (100% da altura da tela) */
+  width: 100%; /* Garante que o contêiner ocupe toda a largura */
 }
 
 .button {
-    padding: 20px 40px;         /* Aumenta o tamanho do botão (verticamente e horizontalmente) */
-    font-size: 30px;            /* Aumenta o tamanho da fonte */
-    font-family: Jura;
-    font-weight: 700;
-    
-    border-radius: 50px;        /* Torna os cantos ainda mais arredondados */
-    margin-top: 30px;           /* Aumenta o espaço entre o texto e o botão */
-    background-color: #000000 !important;
-    border: 4px solid white;    /* Define uma borda branca e mais espessa */
-    color: white;               /* Cor do texto */
-    align-items: center;   
+  padding: 20px 40px; /* Aumenta o tamanho do botão (verticamente e horizontalmente) */
+  font-size: 30px; /* Aumenta o tamanho da fonte */
+  font-family: Jura;
+  font-weight: 700;
 
+  border-radius: 50px; /* Torna os cantos ainda mais arredondados */
+  margin-top: 30px; /* Aumenta o espaço entre o texto e o botão */
+  background-color: #000000 !important;
+  border: 4px solid white; /* Define uma borda branca e mais espessa */
+  color: white; /* Cor do texto */
+  align-items: center;
 }
-
 
 /* --- SLIDE 2 LAYOUT --- */
 .slide2-bg {
@@ -135,7 +133,7 @@ body {
   left: 0;
   width: 100vw; /* Full viewport width */
   height: 100vh; /* Full viewport height */
-  background-color: #B49B2C40;
+  background-color: #b49b2c40;
   z-index: -1; /* Make sure background stays behind the content */
 }
 
@@ -143,24 +141,23 @@ body {
 .container {
   position: relative;
   display: grid;
-  place-items: center;  /* Centers the content */
-  width: auto;  /* Let it adjust based on content */
+  place-items: center; /* Centers the content */
+  width: auto; /* Let it adjust based on content */
   max-width: 80%; /* Optional: Sets a max width to avoid excessive stretching */
   height: auto; /* Optional: Adjust height based on content */
-  padding: 20px;  /* Optional: Add some padding for spacing */
-  text-align: center;  /* Ensure text is centered */
-  gap: 10px;  /* Reduce the gap between elements */
+  padding: 20px; /* Optional: Add some padding for spacing */
+  text-align: center; /* Ensure text is centered */
+  gap: 10px; /* Reduce the gap between elements */
 }
-
 
 .slide2-content {
   display: flex;
-  justify-content: center;  /* Center horizontally */
-  align-items: center;      /* Center vertically */
-  text-align: center;       /* Ensure text is centered */
-  gap: 20px;                /* Reduced the gap between the left and right sections (closer together) */
-  padding: 10px;            /* Reduced padding to make the content more compact */
-  width: 50%;          /* Optionally reduce width further (to keep it tight) */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  text-align: center; /* Ensure text is centered */
+  gap: 20px; /* Reduced the gap between the left and right sections (closer together) */
+  padding: 10px; /* Reduced padding to make the content more compact */
+  width: 50%; /* Optionally reduce width further (to keep it tight) */
 }
 
 /* Text for left and right content */
@@ -214,45 +211,45 @@ body {
 
 .right-left-text p,
 .right-right-text p {
-  color: black;  /* Cor inicial (preto) */
-  cursor: pointer;  /* Para indicar que pode ser interativo */
-  transition: text-decoration 0.3s ease;  /* Suaviza o efeito de sublinhado */
+  color: black; /* Cor inicial (preto) */
+  cursor: pointer; /* Para indicar que pode ser interativo */
+  transition: text-decoration 0.3s ease; /* Suaviza o efeito de sublinhado */
 }
 
 /* Quando qualquer um dos itens for hovered, todos terão o sublinhado */
 .right-left-text p:hover,
 .right-right-text p:hover {
-  text-decoration: underline;  /* Adiciona o sublinhado no hover */
-  text-decoration-color: rgb(155, 227, 255);  /* A cor do sublinhado */
+  text-decoration: underline; /* Adiciona o sublinhado no hover */
+  text-decoration-color: rgb(155, 227, 255); /* A cor do sublinhado */
 }
 
 .right-left-text:hover p,
 .right-right-text:hover p {
-  text-decoration: underline;  /* Adiciona o sublinhado quando o container é hovered */
+  text-decoration: underline; /* Adiciona o sublinhado quando o container é hovered */
   text-decoration-color: rgb(155, 227, 255);
 }
 
-.right-texts{
+.right-texts {
   display: flex;
   justify-content: center;
-  gap: 40px;                
+  gap: 40px;
   margin: 15px;
   padding: 15px;
-    --b: 5px; /* thickness of the border */
-    --c: black; /* color of the border */
-    --w: 20px; /* width of border */
- 
-    border: var(--b) solid #0000; /* space for the border */
-    --_g: #0000 90deg, var(--c) 0;
-    --_p: var(--w) var(--w) border-box no-repeat;
- 
-    background: conic-gradient(
-                from 90deg at top var(--b) left var(--b),
-                var(--_g)
-            )
-            0 0 / var(--_p),
-        conic-gradient(from -90deg at bottom var(--b) right var(--b), var(--_g))
-            100% 100% / var(--_p);
+  --b: 5px; /* thickness of the border */
+  --c: black; /* color of the border */
+  --w: 20px; /* width of border */
+
+  border: var(--b) solid #0000; /* space for the border */
+  --_g: #0000 90deg, var(--c) 0;
+  --_p: var(--w) var(--w) border-box no-repeat;
+
+  background: conic-gradient(
+        from 90deg at top var(--b) left var(--b),
+        var(--_g)
+      )
+      0 0 / var(--_p),
+    conic-gradient(from -90deg at bottom var(--b) right var(--b), var(--_g))
+      100% 100% / var(--_p);
 }
 
 /* Responsive tweaks */
@@ -412,7 +409,7 @@ body {
 
 /* Slide 4 background */
 .bg-slide-4 {
-  background-color: #B49B2C40;
+  background-color: #b49b2c40;
   background-image: url("floresta.jpg");
   background-repeat: no-repeat;
   background-position: right center;
@@ -420,25 +417,25 @@ body {
 }
 
 .centered-text-4 {
-    font-family: Jura;
-    color: rgb(0, 0, 0);
-    font-size: 30px;
-    font-weight: 700;
-    font-style: bold !important;
-    line-height: 1.18;
-    letter-spacing: 0.2em;
-    text-align: center;   /* Alinha o texto ao centro */
-    max-width: 600px;     /* Limita a largura do texto */
-    margin: 200px;       /* Centraliza o bloco de texto */
-    padding: 0 20px;      /* Espaçamento interno opcional para telas pequenas */
+  font-family: Jura;
+  color: rgb(0, 0, 0);
+  font-size: 30px;
+  font-weight: 700;
+  font-style: bold !important;
+  line-height: 1.18;
+  letter-spacing: 0.2em;
+  text-align: center; /* Alinha o texto ao centro */
+  max-width: 600px; /* Limita a largura do texto */
+  margin: 200px; /* Centraliza o bloco de texto */
+  padding: 0 20px; /* Espaçamento interno opcional para telas pequenas */
 }
 
 .container3 {
-    display: flex;
-    justify-content: flex-start; /* Alinha o conteúdo à direita */
-    align-items: center;       /* Centraliza verticalmente */
-    height: 100vh;             /* Altura do contêiner (100% da altura da tela) */
-    width: 100%;               /* Garante que o contêiner ocupe toda a largura */
+  display: flex;
+  justify-content: flex-start; /* Alinha o conteúdo à direita */
+  align-items: center; /* Centraliza verticalmente */
+  height: 100vh; /* Altura do contêiner (100% da altura da tela) */
+  width: 100%; /* Garante que o contêiner ocupe toda a largura */
 }
 
 .custom-button-2 {
@@ -456,7 +453,7 @@ body {
 }
 
 .bg-slide-4 {
-  background-color: #B49B2C40;
+  background-color: #b49b2c40;
   background-image: url("floresta.jpg");
   background-repeat: no-repeat;
   background-position: right center;
@@ -479,22 +476,22 @@ body {
 }
 
 .centered-text-5 {
-    font-family: Jura;
-    color: rgb(0, 0, 0);
-    font-size: 30px;
-    font-weight: 700;
-    font-style: bold !important;
-    line-height: 1.18;
-    letter-spacing: 0.2em;
-    text-align: center;   /* Alinha o texto ao centro */
-    max-width: 600px;     /* Limita a largura do texto */
-    margin: 200px;       /* Centraliza o bloco de texto */
-    padding: 0 20px;      /* Espaçamento interno opcional para telas pequenas */
-    text-align: center;
+  font-family: Jura;
+  color: rgb(0, 0, 0);
+  font-size: 30px;
+  font-weight: 700;
+  font-style: bold !important;
+  line-height: 1.18;
+  letter-spacing: 0.2em;
+  text-align: center; /* Alinha o texto ao centro */
+  max-width: 600px; /* Limita a largura do texto */
+  margin: 200px; /* Centraliza o bloco de texto */
+  padding: 0 20px; /* Espaçamento interno opcional para telas pequenas */
+  text-align: center;
 }
 
 .custom-button-3 {
-  padding: 24px 120px;              /* 10px em cima/baixo, 80px nos lados */
+  padding: 24px 120px; /* 10px em cima/baixo, 80px nos lados */
   font-size: 25px;
   font-family: Jura;
   font-weight: 700;
@@ -505,7 +502,6 @@ body {
   cursor: pointer;
   margin-left: 0;
 }
-
 
 .back-to-top {
   position: fixed;
@@ -524,9 +520,9 @@ body {
 
 /*Footer*/
 
-footer{
+footer {
   background-color: black;
-  color:white;
+  color: white;
   text-align: center;
 }
 
@@ -579,7 +575,6 @@ footer{
   border-radius: 4px;
   z-index: 999;
   transition: opacity 0.3s ease;
-
 }
 
 /* Esconda todas as setas inicialmente */
