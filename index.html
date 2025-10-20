@@ -48,7 +48,9 @@
   </section>
 
   <!-- SECÇÃO 2 -->
+   <!-- Slide 2 -->
  <section id="slide2" class="slide bg-slide-2">
+   <a href="#slide1" class="back-to-top left" aria-label="Voltar ao topo">&#8679;</a>
     <div class="container">
   <div class="slide2-content">
     <div class="text-left">
@@ -82,6 +84,7 @@
 
   <!-- SECÇÃO 3 -->
  <section id="slide3" class="slide bg-slide-3">
+  <a href="#slide1" class="back-to-top right-3" aria-label="Voltar ao topo">&#8679;</a>
   <div class="container2">
     <div class="centered-text-3">
       <h1>Descubra o novo escritório</h1>
@@ -92,6 +95,7 @@
 
 <!--- SECÇÃO 4-->
  <section id="slide4" class="slide bg-slide-4">
+  <a href="#slide1" class="back-to-top left" aria-label="Voltar ao topo">&#8679;</a>
   <div class="container3">
     <div class="centered-text-4">
       <h1>Temos destinos especiais para você</h1>
@@ -102,6 +106,7 @@
 
 <!--- SECÇÃO 5-->
  <section id="slide5" class="slide bg-slide-5">
+  <a href="#slide1" class="back-to-top right" aria-label="Voltar ao topo">&#8679;</a>
   <div class="container4">
     <div class="centered-text-5">
       <button class="custom-button-3">BLOG</button>
@@ -131,9 +136,44 @@
   </div>
 </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-  <a href="#slide1" class="back-to-top" aria-label="Voltar ao topo">
-  &#8679; <!-- seta para cima -->
-</a>
+
+<!--Setas-->
+
+<script>
+  const slides = [
+    document.getElementById('slide2'),
+    document.getElementById('slide3'),
+    document.getElementById('slide4'),
+    document.getElementById('slide5')
+  ];
+
+  // Para cada slide, pega a seta dentro dele
+  const arrows = slides.map(slide => slide.querySelector('.back-to-top'));
+
+  function updateArrows() {
+    const windowHeight = window.innerHeight;
+
+    function isInViewport(element) {
+      const rect = element.getBoundingClientRect();
+      return rect.top < windowHeight && rect.bottom > 0;
+    }
+
+    // Primeiro, esconde todas as setas
+    arrows.forEach(arrow => arrow.classList.remove('active'));
+
+    // Depois, verifica qual slide está visível e ativa a seta dele
+    for (let i = 0; i < slides.length; i++) {
+      if (isInViewport(slides[i])) {
+        arrows[i].classList.add('active');
+        break; // mostra só uma seta por vez
+      }
+    }
+  }
+
+  window.addEventListener('scroll', updateArrows);
+  window.addEventListener('resize', updateArrows);
+  window.addEventListener('load', updateArrows);
+</script>
+
 </body>
 </html>

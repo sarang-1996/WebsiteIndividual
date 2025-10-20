@@ -545,3 +545,49 @@ footer{
 .social-icons a:hover {
   color: white; /* color on hover */
 }
+
+/*Seta*/
+.back-to-top {
+  position: absolute;
+  bottom: 20px;
+  font-size: 2rem;
+  text-decoration: none;
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px;
+  z-index: 999;
+  transition: opacity 0.3s ease;
+}
+
+.back-to-top.left {
+  left: 20px;
+}
+
+.back-to-top.right {
+  right: 20px;
+}
+
+.back-to-top.right-3 {
+  position: absolute;
+  bottom: 20px;
+  font-size: 2rem;
+  text-decoration: none;
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px;
+  z-index: 999;
+  transition: opacity 0.3s ease;
+
+}
+
+/* Esconda todas as setas inicialmente */
+.back-to-top {
+  display: none;
+}
+
+/* Quando ativar, seta aparecerá */
+.back-to-top.active {
+  display: block;
+}
