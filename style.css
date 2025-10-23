@@ -586,3 +586,17 @@ footer {
 .back-to-top.active {
   display: block;
 }
+
+/* Modal - inicialmente escondido */
+.modal {
+  display: none; /* importante: modal só aparece quando JS mudar pra block */
+  position: fixed; /* fica fixo na tela */
+  z-index: 1000; /* na frente de tudo */
+  left: 0;
+  top: 0;
+  width: 100%; /* tela toda */
+  height: 100%; /* tela toda */
+  overflow: auto; /* se conteúdo for maior que a tela */
+  background-color: rgba(0, 0, 0, 0.5); /* fundo semi-transparente */
+}
+
