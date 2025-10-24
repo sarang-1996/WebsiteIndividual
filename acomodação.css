@@ -212,6 +212,31 @@ header.hero {
   color: #333;
 }
 
+.lista {
+  font-family: Jura;
+  font-size: 13px;
+  padding-left: 0px; /* aumenta este valor para recuar mais */
+  /* ou você pode usar margin-left se preferir */
+}
+
+.btn-alugar {
+  width: 100%;
+  padding: 12px 0;
+  background: #78743b;
+  color: rgb(0, 0, 0);
+  border-radius: 10px;
+  border: none;
+  margin-top: 10px;
+  cursor: pointer;
+  font-family: Jura;
+  font-weight: 700;
+}
+
+.btn-alugar:hover {
+  color: #e9e9e9; /* cor ao passar o mouse */
+  text-decoration: none; /* opcional: sublinha ao passar o mouse */
+}
+
 /* --- Footer --- */
 footer {
   background-color: black !important;
@@ -281,6 +306,7 @@ footer .social-icons a {
     display: block;
     text-align: center;
     width: 100%;
+    color: white;
   }
 
   .logo {
