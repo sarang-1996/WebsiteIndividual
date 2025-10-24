@@ -482,6 +482,11 @@ body {
   margin: 20px auto 0 auto;
 }
 
+.custom-button-2:hover {
+  background-color: black;
+  color: white;
+}
+
 .bg-slide-4 {
   background-color: #b49b2c40;
   background-image: url("floresta.jpg");
