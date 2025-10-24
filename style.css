@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100..700;1,100..700&display=swap");
 
-/* --- Global Reset --- */
+/* --- Reset --- */
 * {
   margin: 0;
   padding: 0;
@@ -23,7 +23,7 @@ body {
   padding: 20px 40px;
   z-index: 1000;
   display: flex;
-  justify-content: flex-end; /* ✅ Empurra o menu para a direita */
+  justify-content: flex-end;
   align-items: center;
   background: transparent;
 }
@@ -53,7 +53,7 @@ body {
   color: #757575 !important;
 }
 
-/* --- SLIDE STYLES --- */
+/* --- SLIDE ESTILO --- */
 
 .slide {
   width: 100%;
@@ -64,7 +64,7 @@ body {
   padding: 40px 20px;
 }
 
-/* Slide 1 background */
+/* Slide 1 bg */
 .bg-slide-1 {
   background-image: url("bgpg1.jpg");
   background-size: cover;
@@ -72,7 +72,7 @@ body {
   background-repeat: no-repeat;
 }
 
-/* Slide 2 background */
+/* Slide 2 bg */
 .bg-slide-2 {
   position: relative;
   width: 100%;
@@ -83,30 +83,29 @@ body {
   align-items: center;
 }
 
-/* Slide 3 */
+/* Slide 3 bg */
 .bg-slide-3 {
   position: relative;
   height: 100vh;
-  background-color: #000000; /* full slide color */
+  background-color: #000000;
   overflow: hidden;
 }
 
-/* image layer */
 .bg-slide-3::before {
   content: "";
   position: absolute;
   top: 0;
-  left: 0; /* stick to left */
+  left: 0;
   height: 100%;
-  width: 40%; /* control width independently */
+  width: 40%;
   background-image: url("caravana.jpg");
-  background-size: cover; /* or contain if you want full height without cropping */
+  background-size: cover;
   background-position: left center;
   background-repeat: no-repeat;
   z-index: 0;
 }
 
-/* --- CENTERED TEXT FOR SLIDES --- */
+/* --- TEXTO CENTRADO --- */
 .centered-text {
   text-align: center;
   color: white;
@@ -121,28 +120,28 @@ body {
 
 .container2 {
   display: flex;
-  justify-content: flex-end; /* empurra o bloco para a direita */
+  justify-content: flex-end;
   align-items: center;
   height: 100vh;
-  width: 100%; /* ocupar toda largura do slide */
-  padding-right: 50px; /* distância da borda direita */
+  width: 100%;
+  padding-right: 50px;
 }
 
 .centered-text-3 {
   display: flex;
   flex-direction: column;
-  align-items: flex-end; /* força conteúdo dentro do bloco à direita */
-  text-align: right; /* alinha o texto dentro do bloco */
+  align-items: flex-end;
+  text-align: right;
   color: white;
   font-family: Jura;
   font-size: 25px;
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: 0.1em;
-  width: auto; /* não ocupar mais espaço que necessário */
+  width: auto;
 }
 
-/* botão do slide 3 */
+/* botão slide 3 */
 .custom-button {
   padding: 18px 40px;
   font-size: 22px;
@@ -165,7 +164,7 @@ body {
   z-index: -1;
 }
 
-/* Slide 2 Content */
+/* Slide 2 CONTEUDO */
 .container {
   position: relative;
   display: grid;
@@ -178,7 +177,7 @@ body {
   gap: 10px;
 }
 
-/*Left and right texts */
+/*LEFT AND RIGHT TEXTO */
 .text-left,
 .text-right {
   flex: 1;
@@ -197,18 +196,18 @@ body {
 
 .slide2-content {
   display: flex;
-  flex-direction: row; /* já existe? importante! */
-  align-items: stretch; /* faz a divider ocupar toda altura do container */
-  gap: 20px; /* espaço entre colunas */
+  flex-direction: row;
+  align-items: stretch;
+  gap: 20px;
 }
 
+/*---Divisor---*/
 .divider {
   width: 2px;
   background-color: black;
   border-radius: 1px;
 }
 
-/* Right text */
 .right-texts {
   display: flex;
   justify-content: space-between;
@@ -322,7 +321,7 @@ body {
   }
 }
 
-/* Hide hamburger */
+/* Esconder o hamburger */
 .hamburger {
   display: none;
   font-size: 30px;
@@ -479,7 +478,6 @@ body {
   border-radius: 30px;
   cursor: pointer;
 
-  /* alinhamento perfeito */
   display: block;
   margin: 20px auto 0 auto;
 }
@@ -489,7 +487,7 @@ body {
   background-image: url("floresta.jpg");
   background-repeat: no-repeat;
   background-position: right center;
-  background-size: 50% 100%; /* Cover only the right half */
+  background-size: 50% 100%;
 }
 
 /*Slide 5*/
@@ -497,11 +495,11 @@ body {
 .bg-slide-5 {
   position: relative;
   width: 100%;
-  height: 100vh; /* Ensure background fills the viewport */
+  height: 100vh;
   background-image: url("blogbg.jpg");
   display: flex;
   justify-content: center;
-  align-items: center; /* Center content vertically and horizontally */
+  align-items: center;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -515,15 +513,15 @@ body {
   font-style: bold !important;
   line-height: 1.18;
   letter-spacing: 0.2em;
-  text-align: center; /* Alinha o texto ao centro */
-  max-width: 600px; /* Limita a largura do texto */
-  margin: 200px; /* Centraliza o bloco de texto */
-  padding: 0 20px; /* Espaçamento interno opcional para telas pequenas */
+  text-align: center;
+  max-width: 600px;
+  margin: 200px;
+  padding: 0 20px;
   text-align: center;
 }
 
 .custom-button-3 {
-  padding: 24px 120px; /* 10px em cima/baixo, 80px nos lados */
+  padding: 24px 120px;
   font-size: 25px;
   font-family: Jura;
   font-weight: 700;
@@ -556,7 +554,7 @@ footer {
   text-align: center;
   padding: 20px 0;
   font-family: Jura;
-  color: white; /* garante que todo o texto fique branco */
+  color: white;
 }
 
 footer h1,
@@ -567,10 +565,10 @@ footer p {
 }
 
 footer h4 {
-  font-size: 12px; /* ajuste para o tamanho que quiser */
-  color: white !important; /* mantém branco */
-  margin-top: 5px; /* opcional, deixa um espacinho acima */
-  font-weight: 400; /* opcional, menos pesado que os outros textos */
+  font-size: 12px;
+  color: white !important;
+  margin-top: 5px;
+  font-weight: 400;
   font-family: Jura;
 }
 
@@ -598,13 +596,13 @@ footer .social-icons a {
   z-index: 999;
 }
 
-/* Quando o JS ativa → aparece e fica clicável */
+/* JS ativa → aparece  */
 .back-to-top.active {
   opacity: 1;
   pointer-events: auto;
 }
 
-/* Posições */
+/* Posições setas */
 .back-to-top.left {
   left: 30px;
 }
@@ -614,36 +612,32 @@ footer .social-icons a {
   right: 30px;
 }
 
-/* Cor da seta do slide 3 → branca */
 #slide3 .back-to-top {
   color: white;
 }
 
 .slide {
-  position: relative; /* <-- ESSENCIAL para posicionamento absoluto da seta dentro do slide */
+  position: relative;
 }
 
-/* Regras únicas e finais para as setas */
 .back-to-top {
   font-size: 2.5rem;
   text-decoration: none;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.25s ease, transform 0.25s ease;
-  position: absolute; /* posicionado dentro do .slide agora */
+  position: absolute;
   bottom: 20px;
   z-index: 999;
   transform: translateY(6px);
 }
 
-/* Quando JS adiciona .active */
 .back-to-top.active {
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0);
 }
 
-/* Posições das setas */
 .back-to-top.left {
   left: 30px;
 }
@@ -652,7 +646,6 @@ footer .social-icons a {
   right: 30px;
 }
 
-/* Cor branca para slide3, caso o fundo seja escuro */
 #slide3 .back-to-top {
   color: white;
 }

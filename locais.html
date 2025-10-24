@@ -15,7 +15,7 @@
         <span></span>
       </div>
 
-      <!-- Botão Hamburger -->
+      <!-- Hamburger -->
       <button class="hamburger" id="menu-toggle" aria-label="Abrir menu">
         ☰
       </button>
@@ -35,7 +35,7 @@
         <label>Escolha o país:</label>
         <select id="pais">
           <option value="" disabled selected>País</option>
-          <!-- opção placeholder -->
+          <!-- placeholder -->
           <option value="Portugal">Portugal</option>
           <option value="Espanha">Espanha</option>
         </select>
@@ -43,13 +43,10 @@
         <label>Escolha a cidade:</label>
         <select id="cidade">
           <option value="" disabled selected>Cidade</option>
-          <!-- placeholder -->
-          <!-- opções serão adicionadas pelo JS -->
         </select>
 
         <button id="btnVer" class="btn-ver">Ver</button>
       </div>
-      <!-- ← fecha a filter-box aqui! -->
 
       <div class="map-box" id="mapBox">
         <iframe id="mapFrame" allowfullscreen="" loading="lazy"></iframe>
@@ -104,14 +101,11 @@
         const email = document.getElementById("email");
         const mapBox = document.getElementById("mapBox");
 
-        // Função para atualizar cidades
         function atualizarCidades() {
           const paisSelecionado = paisSelect.value;
 
-          // Limpa opções
           cidadeSelect.innerHTML = "";
 
-          // Adiciona placeholder
           const placeholder = document.createElement("option");
           placeholder.value = "";
           placeholder.textContent = "Cidade";
@@ -119,7 +113,6 @@
           placeholder.selected = true;
           cidadeSelect.appendChild(placeholder);
 
-          // Só adiciona cidades se houver país selecionado
           if (!paisSelecionado) return;
 
           Object.keys(locaisData[paisSelecionado]).forEach((cidade) => {
@@ -129,13 +122,11 @@
             cidadeSelect.appendChild(option);
           });
         }
-        // Atualiza ao carregar
+
         atualizarCidades();
 
-        // Atualiza ao mudar o país
         paisSelect.addEventListener("change", atualizarCidades);
 
-        // Botão Ver
         btnVer.addEventListener("click", () => {
           const pais = paisSelect.value;
           const cidade = cidadeSelect.value;
@@ -153,7 +144,7 @@
         });
       });
 
-      // Hamburger toggle
+      // Hamburger
       const menuToggle = document.getElementById("menu-toggle");
       const nav = document.querySelector(".nav");
 

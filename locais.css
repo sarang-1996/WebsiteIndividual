@@ -1,12 +1,10 @@
-/* Fundo */
 body {
   background: url("locaisbg.jpg") no-repeat center center fixed;
   background-size: cover;
   margin: 0;
-  padding-top: 160px; /* ➜ espaço para o header */
+  padding-top: 160px;
 }
 
-/* Overlay */
 body::before {
   content: "";
   position: fixed;
@@ -30,11 +28,10 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  /* Reduzi a altura para ficar compacto */
   padding: 25px 80px;
   display: flex;
-  align-items: center; /* ESSENCIAL para alinhar logo e nav verticalmente */
-  justify-content: space-between; /* Empurra logo e nav para os extremos */
+  align-items: center;
+  justify-content: space-between;
   z-index: 999;
   background: transparent;
 }
@@ -47,10 +44,9 @@ header {
   width: 30px;
   height: 32px;
   position: relative;
-  /* Já não precisa de margin-right: auto, pois o header usa justify-content: space-between */
 }
 
-/* Regras para as 3 barras do logo */
+/*barras do logo */
 .logo::before,
 .logo span,
 .logo::after {
@@ -58,24 +54,21 @@ header {
   position: absolute;
   width: 6px;
   height: 32px;
-  background: #ffffff66; /* Branco Puro */
+  background: #ffffff66;
   border-radius: 4px;
-  top: 0; /* Começa no topo do container .logo */
+  top: 0;
 }
 
-/* Barra esquerda */
 .logo::before {
   left: 0px;
   transform: skew(-20deg);
 }
 
-/* Barra do meio (agora a única <span>) */
 .logo span {
   left: 10px;
   transform: skew(-10deg);
 }
 
-/* Barra direita */
 .logo::after {
   left: 20px;
   transform: skew(-1deg);
@@ -84,15 +77,15 @@ header {
 .nav {
   list-style: none;
   display: flex;
-  gap: 50px; /* Aumentei o espaçamento entre os links */
-  margin: 0; /* Removi a margem lateral */
+  gap: 50px;
+  margin: 0;
   padding: 0;
   font-family: Jura;
 }
 
 .nav-link {
   text-decoration: none;
-  color: #ffffff; /* Branco puro para visibilidade */
+  color: #ffffff;
   font-weight: 300;
   font-size: 15px;
   letter-spacing: 2px;
@@ -101,7 +94,6 @@ header {
   font-weight: 700;
 }
 
-/* Mantém as regras de hover e active */
 .nav-link:hover,
 .nav-link.active {
   color: #dedede;
@@ -119,7 +111,6 @@ nav ul li a {
   padding: 60px 100px;
 }
 
-/* FILTER BOX */
 .filter-box {
   background: rgba(255, 255, 255, 0.92);
   width: 260px;
@@ -158,7 +149,7 @@ nav ul li a {
   margin-bottom: 12px;
   border-radius: 8px;
   border: none;
-  background: #ffffff; /* ➜ background da caixa inteira */
+  background: #ffffff;
   font-family: Jura;
   font-weight: 700;
 }
@@ -167,7 +158,7 @@ nav ul li a {
 .map-box {
   width: 430px;
   display: none;
-  margin-left: 650px; /* empurra para o lado */
+  margin-left: 650px;
 }
 
 .map-box iframe {
@@ -179,7 +170,6 @@ nav ul li a {
   margin-left: 30px;
 }
 
-/* INFO */
 .info-box {
   width: 300px;
   background: rgba(0, 0, 0, 0.7);
@@ -187,12 +177,12 @@ nav ul li a {
   border-radius: 12px;
   margin-top: 20px;
   color: #fff;
-  text-align: center; /* ✅ centraliza tudo dentro da caixa */
+  text-align: center;
   font-family: Jura;
   font-size: 10px;
 }
 
-/* Hamburger Mobile */
+/* Hamburger */
 .hamburger {
   display: none;
   font-size: 30px;
@@ -202,45 +192,38 @@ nav ul li a {
   margin-left: auto;
 }
 
-/* Hamburger Mobile - adiciona ao teu CSS existente */
+/*HAMBURGER MOBILE*/
 .hamburger {
   display: none;
   font-size: 30px;
   background: none;
   border: none;
   cursor: pointer;
-  color: #fff; /* visível no header transparente */
-  z-index: 1000; /* acima de tudo */
+  color: #fff;
+  z-index: 1000;
 }
 
 @media (max-width: 768px) {
-  /* Navbar oculta por defeito */
   .nav {
     display: none;
     flex-direction: column;
     width: 100%;
     gap: 10px;
     margin-top: 10px;
-    background: rgba(
-      0,
-      0,
-      0,
-      0.6
-    ); /* fundo semi-transparente atrás dos links */
+    background: rgba(0, 0, 0, 0.6);
     border-radius: 12px;
     padding: 10px 0;
     position: absolute;
-    top: 80px; /* logo + padding do header */
+    top: 80px;
     left: 0;
   }
 
-  /* Mostra quando clicado */
   .nav.active {
     display: flex;
   }
 
   .nav li a {
-    font-size: 16px; /* ajusta para caber */
+    font-size: 16px;
     padding: 8px 0;
     text-align: center;
     color: #fff;
@@ -250,12 +233,10 @@ nav ul li a {
     display: block;
   }
 
-  /* Mantém logo ok no mobile */
   .logo {
     margin-bottom: 0;
   }
 
-  /* Filter-box full width */
   .locais-section {
     flex-direction: column;
     padding: 40px 20px;
@@ -267,7 +248,6 @@ nav ul li a {
     margin-bottom: 20px;
   }
 
-  /* Mapa full width */
   .map-box {
     width: 100%;
     margin-left: 0;
