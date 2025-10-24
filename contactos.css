@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css2?family=Jura:wght@300;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Jura", sans-serif;
+    min-height: 100vh;
+    background: url('contactosbg.jpg') center bottom/cover no-repeat fixed;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.65);
+    z-index: 0;
+}
+
+/********** HEADER **********/
+/********** HEADER IDÊNTICO AO PRINT **********/
+.main-header {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 30px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    z-index: 10;
+}
+
+.logo {
+    position: absolute;
+    left: 40px;
+    top: 25px;
+    width: 30px;
+    height: 32px;
+}
+
+.logo::before,
+.logo::after,
+.logo span {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 32px;
+    background: rgba(210, 210, 210, 0.55); /* Mesma cor nas 3 */
+    border-radius: 4px;
+    top: 0;
+}
+
+/* Barra esquerda */
+.logo::before {
+    left: 0px;
+    transform: skew(-18deg);
+}
+
+/* Barra do meio */
+.logo span {
+    left: 10px;
+    transform: skew(-10deg);
+}
+
+/* Barra direita */
+.logo::after {
+    left: 20px;
+    transform: skew(-5deg);
+}
+
+
+.nav {
+    list-style: none;
+    display: flex;
+    gap: 45px;
+    margin-right: 40px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 300;
+    font-size: 15px;
+    letter-spacing: 2px;
+    transition: .25s ease-in-out;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #dedede;
+}
+
+/********** CONTENT **********/
+.contato-section {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 100px;
+    position: relative;
+    z-index: 5;
+}
+
+/* ✅ Form */
+.form-box {
+    background: rgba(0,0,0,0.88);
+    padding: 40px;
+    width: 370px;
+    border-radius: 20px;
+}
+
+label {
+    color: #e7e7e7;
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input, textarea {
+    width: 100%;
+    background: white;
+    border: none;
+    border-radius: 14px;
+    padding: 12px;
+    margin-bottom: 16px;
+    font-size: 15px;
+}
+
+textarea {
+    height: 115px;
+    resize: none;
+}
+
+/* ✅ Botão igual print */
+.btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 25px;
+    border: 2px solid #cecece;
+    background: transparent;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* ✅ Frase da direita */
+.quote-box {
+    width: 300px;
+    text-align: right;
+    color: white;
+    margin-bottom: 100px;
+}
+
+blockquote {
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.quote-box p {
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.modal {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(3px);
+    z-index: 9999;
+}
+
+.modal-content {
+    background: white;
+    color: #333;
+    padding: 25px 30px;
+    border-radius: 20px;
+    text-align: center;
+
+    /* ✅ deixe ela menor */
+    width: 400px;
+    max-width: 90%;
+
+    /* melhorar visual */
+    border: 3px solid #3ca3ff;
+    box-shadow: 0 0 30px rgba(0,0,0,0.25);
+}
+
+.ok-btn {
+    width: 120px;
+    margin-top: 10px;
+    background: #64b4fd;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    padding: 10px 0;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}

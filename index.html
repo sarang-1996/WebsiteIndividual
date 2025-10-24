@@ -15,12 +15,12 @@
 
   <!-- NAVBAR -->
 <header class="main-header">
-  <!-- Hamburger button (mobile only) -->
-  <button class="hamburger" id="menu-toggle" aria-label="Toggle menu">
-    ☰
-  </button>
+  <!-- Hamburger menu (mobile only) -->
+ <button class="hamburger" id="menu-toggle" aria-label="Abrir menu principal">
+  ☰
+ </button>
 
-  <!-- Nav list wrapped in a container -->
+  <!-- Nav list -->
   <nav class="nav-container" id="nav-container">
     <ul class="nav">
       <li class="nav-item">
@@ -30,10 +30,10 @@
         <a class="nav-link nav-item-custom" href="Locais.html" target="_blank">Locais</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link nav-item-custom" href="Blog.html" target="_blank">Blog</a>
+        <a class="nav-link nav-item-custom" href="#slide5">Blog</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link nav-item-custom" href="Contactos.html" target="_blank">Contactos</a>
+        <a class="nav-link nav-item-custom" href="contactos.html" target="_blank">Contactos</a>
       </li>
     </ul>
   </nav>
@@ -48,7 +48,6 @@
   </section>
 
   <!-- SECÇÃO 2 -->
-   <!-- Slide 2 -->
  <section id="slide2" class="slide bg-slide-2">
    <a href="#slide1" class="back-to-top left" aria-label="Voltar ao topo">&#8679;</a>
     <div class="container">
@@ -119,7 +118,7 @@
   <div class="centered-text-6">
     <h1>Living Around</h1>
 
-    <!-- Social Icons -->
+    <!-- Icons -->
     <div class="social-icons">
       <a href="https://facebook.com" target="_blank" aria-label="Facebook">
         <i class="fab fa-facebook-f"></i>
@@ -132,13 +131,12 @@
       </a>
     </div>
 
-    <p><h10>Powered by Cesae Digital</p></h10>
+    <h4>Powered by Cesae Digital</h4>
   </div>
 </footer>
 
 
 <!--Setas-->
-
 <script>
   const slides = [
     document.getElementById('slide2'),
@@ -147,7 +145,7 @@
     document.getElementById('slide5')
   ];
 
-  // Para cada slide, pega a seta dentro dele
+  // Seta dentro do slide
   const arrows = slides.map(slide => slide.querySelector('.back-to-top'));
 
   function updateArrows() {
@@ -158,14 +156,14 @@
       return rect.top < windowHeight && rect.bottom > 0;
     }
 
-    // Primeiro, esconde todas as setas
+    // Esconde todas
     arrows.forEach(arrow => arrow.classList.remove('active'));
 
-    // Depois, verifica qual slide está visível e ativa a seta dele
+    // Ativa a seta só do slide em que estamos
     for (let i = 0; i < slides.length; i++) {
       if (isInViewport(slides[i])) {
         arrows[i].classList.add('active');
-        break; // mostra só uma seta por vez
+        break; 
       }
     }
   }
@@ -173,6 +171,25 @@
   window.addEventListener('scroll', updateArrows);
   window.addEventListener('resize', updateArrows);
   window.addEventListener('load', updateArrows);
+</script>
+
+<script>
+  const header = document.querySelector(".main-header");
+  const slide1 = document.getElementById("slide1");
+
+  function toggleHeaderOnScroll() {
+    const slide1Bottom = slide1.getBoundingClientRect().bottom;
+
+    // Volta a esconder quando saimos do slide
+    if (slide1Bottom <= 50) {
+      header.classList.add("hidden");
+    } else {
+      header.classList.remove("hidden");
+    }
+  }
+
+  window.addEventListener("scroll", toggleHeaderOnScroll);
+  window.addEventListener("load", toggleHeaderOnScroll);
 </script>
 
 </body>

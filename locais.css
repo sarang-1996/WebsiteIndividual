@@ -1,0 +1,172 @@
+/* Fundo */
+body {
+    background: url("locaisbg.jpg") no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding-top: 160px; /* ➜ espaço para o header */
+}
+
+/* Overlay */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(3px);
+    z-index: -1;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    align-items: center;
+}
+
+.main-header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* Reduzi a altura para ficar compacto */
+    padding: 25px 80px; 
+    display: flex;
+    align-items: center; /* ESSENCIAL para alinhar logo e nav verticalmente */
+    justify-content: space-between; /* Empurra logo e nav para os extremos */
+    z-index: 999;
+    background: transparent;
+}
+
+.nav-container{
+    margin-right: 100px;
+}
+
+.logo {
+    width: 30px; 
+    height: 32px; 
+    position: relative; 
+    /* Já não precisa de margin-right: auto, pois o header usa justify-content: space-between */
+}
+
+/* Regras para as 3 barras do logo */
+.logo::before,
+.logo span,
+.logo::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 32px;
+    background: #ffffff; /* Branco Puro */
+    border-radius: 4px;
+    top: 0; /* Começa no topo do container .logo */
+}
+
+/* Barra esquerda */
+.logo::before {
+    left: 0px;
+    transform: skew(-18deg);
+}
+
+/* Barra do meio (agora a única <span>) */
+.logo span {
+    left: 10px;
+    transform: skew(-10deg);
+}
+
+/* Barra direita */
+.logo::after {
+    left: 20px;
+    transform: skew(-5deg);
+}
+
+.nav {
+    list-style: none;
+    display: flex;
+    gap: 50px; /* Aumentei o espaçamento entre os links */
+    margin: 0; /* Removi a margem lateral */
+    padding: 0;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #ffffff; /* Branco puro para visibilidade */
+    font-weight: 300;
+    font-size: 15px;
+    letter-spacing: 2px;
+    transition: .25s ease-in-out;
+}
+
+/* Mantém as regras de hover e active */
+.nav-link:hover,
+.nav-link.active {
+    color: #dedede;
+}
+
+nav ul li a {
+    padding: 0 15px;
+    line-height: 60px;
+}
+
+/* SECTION — ✅ apenas uma regra */
+.locais-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 100px;
+}
+
+/* FILTER BOX */
+.filter-box {
+    background: rgba(255,255,255,0.92);
+    width: 260px;
+    padding: 30px 25px;
+    border-radius: 20px;
+    color: #333;
+}
+
+.filter-box select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border: none;
+    background: #efefef;
+}
+
+.btn-ver {
+    width: 100%;
+    padding: 12px 0;
+    background: #78743b;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+/* MAP */
+.map-box {
+    width: 480px;
+    display: none;
+    margin-left: 60px; /* empurra para o lado */
+}
+
+.map-box iframe {
+    width: 100%;
+    height: 250px;
+    border-radius: 12px;
+    border: none;
+}
+
+/* INFO */
+.info-box {
+    width: 420px;
+    background: rgba(0, 0, 0, 0.70);
+    padding: 22px;
+    border-radius: 12px;
+    margin-top: 20px;
+    color: #fff;
+    text-align: center; /* ✅ centraliza tudo dentro da caixa */
+}

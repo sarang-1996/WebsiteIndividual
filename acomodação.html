@@ -5,6 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Acomodação</title>
     <link rel="stylesheet" href="links.css" />
+
+    <style>
+      .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    inset: 0;
+    background-image: url('acomodação.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(4px);
+    padding: 20px;
+    overflow: auto;
+  }
+      .modal-content {
+    background: white;
+    padding: 22px;
+    border-radius: 18px;
+    width: 90%;
+    max-width: 480px;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: 0px 8px 28px rgba(0,0,0,0.35);
+ }
+
+  .modal-content img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  transform: scaleX(-1);
+}
+
+      .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      .more-info-btn {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 14px;
+      }
+    </style>
+
   </head>
   <body>
     <header class="hero">
@@ -26,6 +81,7 @@
     <div class="page-content"></div>
 
     <div class="cards-container">
+
       <div class="card">
         <img src="C1.jpg" alt="Image 1" />
         <h2>Hippie Ride</h2>
@@ -37,98 +93,13 @@
           <li>WC portátil;</li>
           <li>Carregador USB;</li>
         </ul>
-    <style>
-    .modal {
-      display: none; /* escondido por padrão */
-      position: fixed; /* fixo na tela */
-      z-index: 1000; /* na frente */
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url(acomodação.jpg);
-      overflow: auto;
-    }
-
-    .modal-content {
-      background-color: white;
-      margin: 10% auto;
-      padding: 20px;
-      border-radius: 8px;
-      width: 90%;
-      max-width: 400px;
-      position: relative;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-
-    .close-btn {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      font-size: 24px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    /* Botão + Info */
-    .more-info-btn {
-      padding: 8px 16px;
-      background-color: transparent;
-      border: none;
-      border-radius: 4px;
-      color: black;
-      cursor: pointer;
-      font-size: 14px;
-    }
-
-    .more-info-btn:hover {
-      background-color: transparent;
-    }
-  </style>
-
-  <button class="more-info-btn">+ Info</button>
-
-  <!-- Modal -->
-  <div id="infoModal" class="modal">
-    <div class="modal-content">
-      <span class="close-btn">&times;</span>
-      <h2>Mais informações</h2>
-      <p>Aqui vão as informações detalhadas.</p>
-    </div>
-  </div>
-
-  <script>
-    // Seleciona elementos
-    const modal = document.getElementById("infoModal");
-    const btn = document.querySelector(".more-info-btn");
-    const closeBtn = modal.querySelector(".close-btn");
-
-    // Abrir modal ao clicar no botão + Info
-    btn.addEventListener("click", () => {
-      modal.style.display = "block";
-    });
-
-    // Fechar modal ao clicar no X
-    closeBtn.addEventListener("click", () => {
-      modal.style.display = "none";
-    });
-
-    // Fechar modal ao clicar fora do conteúdo
-    window.addEventListener("click", (e) => {
-      if (e.target === modal) {
-        modal.style.display = "none";
-      }
-    });
-  </script>
-
-        <!-- Hidden extra info -->
-        <div class="more-info"></div>
+        <button class="more-info-btn">+ Info</button>
       </div>
 
       <div class="card">
         <img src="C2.jpg" alt="Image 2" />
         <h2>Harvest Ride</h2>
-        <p>A partir de 80€/dia<</p>
+        <p>A partir de 80€/dia</p>
         <ul>
           Equipada com:
           <li>Cozinha equipada;</li>
@@ -136,17 +107,13 @@
           <li>WC portátil;</li>
           <li>Carregador USB;</li>
         </ul>
-        <!-- + Info button -->
         <button class="more-info-btn">+ Info</button>
-
-        <!-- Hidden extra info -->
-        <div class="more-info"></div>
       </div>
 
       <div class="card">
         <img src="C3.jpg" alt="Image 3" />
         <h2>Nomade Ride</h2>
-        <p>A partir de 100€/dia<</p>
+        <p>A partir de 100€/dia</p>
         <ul>
           Equipada com:
           <li>Cozinha equipada;</li>
@@ -154,17 +121,13 @@
           <li>WC portátil;</li>
           <li>Carregador USB;</li>
         </ul>
-        <!-- + Info button -->
         <button class="more-info-btn">+ Info</button>
-
-        <!-- Hidden extra info -->
-        <div class="more-info"></div>
       </div>
 
       <div class="card">
         <img src="C4.jpg" alt="Image 4" />
         <h2>Family Ride</h2>
-        <p>A partir de 50€/dia<</p>
+        <p>A partir de 50€/dia</p>
         <ul>
           Equipada com:
           <li>Cozinha equipada;</li>
@@ -172,17 +135,13 @@
           <li>WC portátil;</li>
           <li>Carregador USB;</li>
         </ul>
-        <!-- + Info button -->
         <button class="more-info-btn">+ Info</button>
-
-        <!-- Hidden extra info -->
-        <div class="more-info"></div>
       </div>
 
       <div class="card">
         <img src="C5.jpg" alt="Image 5" />
         <h2>Surf Ride</h2>
-        <p>A partir de 60€/dia<</p>
+        <p>A partir de 60€/dia</p>
         <ul>
           Equipada com:
           <li>Cozinha equipada;</li>
@@ -190,17 +149,13 @@
           <li>WC portátil;</li>
           <li>Carregador USB;</li>
         </ul>
-        <!-- + Info button -->
         <button class="more-info-btn">+ Info</button>
-
-        <!-- Hidden extra info -->
-        <div class="more-info"></div>
       </div>
 
       <div class="card">
         <img src="C6.jpg" alt="Image 6" />
         <h2>Cave Ride</h2>
-        <p>A partir de 30€/dia<</p>
+        <p>A partir de 30€/dia</p>
         <ul>
           Equipada com:
           <li>Cozinha equipada;</li>
@@ -208,14 +163,52 @@
           <li>WC portátil;</li>
           <li>Carregador USB;</li>
         </ul>
-        <!-- + Info button -->
         <button class="more-info-btn">+ Info</button>
-
-        <!-- Hidden extra info -->
-        <div class="more-info"></div>
       </div>
 
-      <!-- Repeat for cards 3–6 -->
     </div>
+
+    <!-- ✅ Modal no sitio correto -->
+    <div id="infoModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Hippie Ride</h2>
+                <img src="C1.jpg" alt="Image" />
+        <p>Imagine acordar com o som das ondas na praia, estacionar à beira de uma floresta serena ou partir numa viagem espontânea sem preocupações com hotéis ou horários. Alugar uma carrinha adaptada é sinônimo de liberdade, conforto e aventura – tudo em um só lugar! </p>
+        <p>A nossa carrinha é a solução perfeita para viajantes que buscam autonomia e praticidade, sem abrir mão do essencial. Por apenas 50€ por dia, você tem um lar sobre rodas totalmente equipado para tornar sua viagem inesquecível:<p/>
+        <p>✔ Cozinha completa – Prepare suas refeições favoritas a qualquer momento.</p>
+        <p>✔ Cama de casal confortável – Descanse com todo o espaço que precisa.</p>
+        <p>✔ WC portátil – Privacidade e conveniência onde quer que vá.</p>
+        <p>✔ Carregador USB – Mantenha seus dispositivos sempre prontos para uso.</p> 
+        <p>Por que escolher a nossa carrinha? 
+          <ul class="lista"> 
+            <li>Economia: Mais barato que hotéis e com total flexibilidade.</a></li> 
+            <li>Conforto: Tudo o que você precisa em um espaço compacto e bem organizado.</a></li> 
+            <li>Aventura personalizada: Viaje no seu ritmo, pare onde quiser e crie memórias únicas.</a></li> 
+          </ul> 
+          <p>Seja para um fim de semana romântico, uma escapada em família ou uma viagem solo cheia de descobertas, a nossa carrinha está pronta para ser a sua companheira de estrada. Reserve já e transforme qualquer destino em casa!</p>
+      </div>
+    </div>
+
+    <script>
+      const modal = document.getElementById("infoModal");
+      const closeBtn = modal.querySelector(".close-btn");
+      const cards = document.querySelectorAll(".card");
+
+      cards.forEach(card => {
+        const btn = card.querySelector(".more-info-btn");
+        btn.addEventListener("click", () => {
+          modal.style.display = "block";
+          modal.querySelector("h2").innerText = card.querySelector("h2").innerText;
+          modal.querySelector("img").src = card.querySelector("img").src;
+        });
+      });
+
+      closeBtn.addEventListener("click", () => modal.style.display = "none");
+      window.addEventListener("click", e => {
+        if (e.target === modal) modal.style.display = "none";
+      });
+    </script>
+
   </body>
 </html>

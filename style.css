@@ -16,30 +16,43 @@ body {
 
 /* --- NAV BAR --- */
 .main-header {
-  position: relative; /* ← Not fixed anymore */
-  padding: 10px 20px;
-  border-bottom-left-radius: 8px;
-  background-color: transparent !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 40px;
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-end; /* ✅ Empurra o menu para a direita */
+  align-items: center;
+  background: transparent;
+}
+
+.main-header.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
 }
 
 .nav {
-  justify-content: flex-end;
   display: flex;
+  gap: 40px;
   list-style: none;
 }
 
 .nav-item-custom {
   font-weight: 700;
-  font-size: 20px;
-  color: black;
-  margin-left: 20px;
+  font-size: 18px;
+  color: black !important;
   text-decoration: none;
   font-family: Jura;
+  transition: color 0.3s ease;
 }
 
-.nav-link {
-  color: black !important;
+.nav-item-custom:hover {
+  color: #757575 !important;
 }
+
 
 /* --- SLIDE STYLES --- */
 
@@ -64,20 +77,20 @@ body {
 .bg-slide-2 {
   position: relative;
   width: 100%;
-  height: 100vh; /* Ensure background fills the viewport */
+  height: 100vh; 
   background-color: #b49b2c40;
   display: flex;
   justify-content: center;
-  align-items: center; /* Center content vertically and horizontally */
+  align-items: center; 
 }
 
 /* Slide 3 */
 .bg-slide-3 {
   background-color: #000000;
   background-image: url(caravana.jpg);
-  background-position: left center; /* Posiciona a imagem à esquerda e centraliza verticalmente */
-  background-repeat: no-repeat; /* Impede que a imagem se repita */
-  background-size: contain; /* Ajusta a imagem para caber dentro do elemento */
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 /* --- CENTERED TEXT FOR SLIDES --- */
@@ -100,67 +113,67 @@ body {
   font-style: bold;
   line-height: 1.18;
   letter-spacing: 0.2em;
-  text-align: right; /* Alinha o texto à direita */
-  padding-right: 20px; /* Adiciona um pouco de espaçamento à direita */
+  text-align: right; 
+  padding-right: 20px; 
 }
 
 .container2 {
   display: flex;
-  justify-content: flex-end; /* Alinha o conteúdo à direita */
-  align-items: center; /* Centraliza verticalmente */
-  height: 100vh; /* Altura do contêiner (100% da altura da tela) */
-  width: 100%; /* Garante que o contêiner ocupe toda a largura */
+  justify-content: flex-end;
+  align-items: center; 
+  height: 100vh; 
+  width: 100%; 
 }
 
 .button {
-  padding: 20px 40px; /* Aumenta o tamanho do botão (verticamente e horizontalmente) */
-  font-size: 30px; /* Aumenta o tamanho da fonte */
+  padding: 20px 40px; 
+  font-size: 30px; 
   font-family: Jura;
   font-weight: 700;
 
-  border-radius: 50px; /* Torna os cantos ainda mais arredondados */
-  margin-top: 30px; /* Aumenta o espaço entre o texto e o botão */
+  border-radius: 50px;
+  margin-top: 30px; 
   background-color: #000000 !important;
-  border: 4px solid white; /* Define uma borda branca e mais espessa */
-  color: white; /* Cor do texto */
+  border: 4px solid white; 
+  color: white; 
   align-items: center;
 }
 
-/* --- SLIDE 2 LAYOUT --- */
+/* --- SLIDE 2 --- */
 .slide2-bg {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw; /* Full viewport width */
-  height: 100vh; /* Full viewport height */
+  width: 100vw;
+  height: 100vh; 
   background-color: #b49b2c40;
-  z-index: -1; /* Make sure background stays behind the content */
+  z-index: -1; 
 }
 
-/* Slide 2 Content (inside container) */
+/* Slide 2 Content */
 .container {
   position: relative;
   display: grid;
-  place-items: center; /* Centers the content */
-  width: auto; /* Let it adjust based on content */
-  max-width: 80%; /* Optional: Sets a max width to avoid excessive stretching */
-  height: auto; /* Optional: Adjust height based on content */
-  padding: 20px; /* Optional: Add some padding for spacing */
-  text-align: center; /* Ensure text is centered */
-  gap: 10px; /* Reduce the gap between elements */
+  place-items: center;
+  width: auto; 
+  max-width: 80%; 
+  height: auto; 
+  padding: 20px; 
+  text-align: center; 
+  gap: 10px; 
 }
 
 .slide2-content {
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  text-align: center; /* Ensure text is centered */
-  gap: 20px; /* Reduced the gap between the left and right sections (closer together) */
-  padding: 10px; /* Reduced padding to make the content more compact */
-  width: 50%; /* Optionally reduce width further (to keep it tight) */
+  justify-content: center; 
+  align-items: center; 
+  text-align: center; 
+  gap: 20px; 
+  padding: 10px; 
+  width: 50%; 
 }
 
-/* Text for left and right content */
+/*Left and right texts */
 .text-left,
 .text-right {
   flex: 1;
@@ -177,15 +190,15 @@ body {
   flex-direction: column;
 }
 
-/* Divider between left and right text */
+/* Divider */
 .divider {
   width: 2px;
   background-color: black;
   border-radius: 1px;
-  align-self: stretch; /* Make divider stretch vertically */
+  align-self: stretch; 
 }
 
-/* Right text layout */
+/* Right text */
 .right-texts {
   display: flex;
   justify-content: space-between;
@@ -211,21 +224,21 @@ body {
 
 .right-left-text p,
 .right-right-text p {
-  color: black; /* Cor inicial (preto) */
-  cursor: pointer; /* Para indicar que pode ser interativo */
-  transition: text-decoration 0.3s ease; /* Suaviza o efeito de sublinhado */
+  color: black; 
+  cursor: pointer; 
+  transition: text-decoration 0.3s ease; 
 }
 
-/* Quando qualquer um dos itens for hovered, todos terão o sublinhado */
+
 .right-left-text p:hover,
 .right-right-text p:hover {
-  text-decoration: underline; /* Adiciona o sublinhado no hover */
-  text-decoration-color: rgb(155, 227, 255); /* A cor do sublinhado */
+  text-decoration: underline;
+  text-decoration-color: rgb(155, 227, 255);
 }
 
 .right-left-text:hover p,
 .right-right-text:hover p {
-  text-decoration: underline; /* Adiciona o sublinhado quando o container é hovered */
+  text-decoration: underline; 
   text-decoration-color: rgb(155, 227, 255);
 }
 
@@ -235,11 +248,11 @@ body {
   gap: 40px;
   margin: 15px;
   padding: 15px;
-  --b: 5px; /* thickness of the border */
-  --c: black; /* color of the border */
-  --w: 20px; /* width of border */
+  --b: 5px;
+  --c: black;
+  --w: 20px; 
 
-  border: var(--b) solid #0000; /* space for the border */
+  border: var(--b) solid #0000; 
   --_g: #0000 90deg, var(--c) 0;
   --_p: var(--w) var(--w) border-box no-repeat;
 
@@ -252,7 +265,7 @@ body {
       100% 100% / var(--_p);
 }
 
-/* Responsive tweaks */
+/* Responsive */
 @media (max-width: 768px) {
   .slide2-content {
     flex-direction: column;
@@ -300,7 +313,7 @@ body {
   }
 }
 
-/* Hide hamburger by default */
+/* Hide hamburger */
 .hamburger {
   display: none;
   font-size: 30px;
@@ -310,12 +323,12 @@ body {
   color: black;
 }
 
-/* Mobile styles */
+/* Mobile */
 @media (max-width: 768px) {
   .main-header {
     width: 100%;
     padding: 10px 20px;
-    background-color: transparent !important; /* ✅ */
+    background-color: transparent !important; 
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -328,7 +341,7 @@ body {
   .nav-container {
     display: none;
     width: 100%;
-    background-color: transparent !important; /* ✅ Optional, in case the container is the issue */
+    background-color: transparent !important;
   }
 
   .nav-container.active {
@@ -346,11 +359,11 @@ body {
     font-size: 18px;
     margin-left: 0;
     padding: 8px 0;
-    background: transparent !important; /* ✅ Just in case individual items have it */
+    background: transparent !important;
   }
 }
 
-/* 🔥 Nuke white backgrounds everywhere */
+
 .main-header,
 .nav-container,
 .nav,
@@ -361,7 +374,7 @@ body {
   box-shadow: none !important;
 }
 
-/* 🔥 Final white box purge for mobile nav */
+
 @media (max-width: 768px) {
   .nav-container,
   .nav,
@@ -398,7 +411,7 @@ body {
   border-radius: 30px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
-  margin-right: 200px; /* ← instead of margin-left */
+  margin-right: 200px; 
   margin-left: 0;
 }
 
@@ -407,13 +420,13 @@ body {
   color: black;
 }
 
-/* Slide 4 background */
+/* Slide 4 */
 .bg-slide-4 {
   background-color: #b49b2c40;
   background-image: url("floresta.jpg");
   background-repeat: no-repeat;
   background-position: right center;
-  background-size: 50% 100%; /* Cover only the right half */
+  background-size: 50% 100%; 
 }
 
 .centered-text-4 {
@@ -424,19 +437,32 @@ body {
   font-style: bold !important;
   line-height: 1.18;
   letter-spacing: 0.2em;
-  text-align: center; /* Alinha o texto ao centro */
-  max-width: 600px; /* Limita a largura do texto */
-  margin: 200px; /* Centraliza o bloco de texto */
-  padding: 0 20px; /* Espaçamento interno opcional para telas pequenas */
+  text-align: center;
+  max-width: 600px; 
+  margin: 200px; 
+  padding: 0 20px; 
 }
 
 .container3 {
   display: flex;
-  justify-content: flex-start; /* Alinha o conteúdo à direita */
-  align-items: center; /* Centraliza verticalmente */
-  height: 100vh; /* Altura do contêiner (100% da altura da tela) */
-  width: 100%; /* Garante que o contêiner ocupe toda a largura */
+  justify-content: center; 
+  align-items: center;
+  width: 100%;
+  height: 100vh;
 }
+
+.centered-text-4 {
+  max-width: 500px;
+  padding: 10px;
+
+ 
+  text-align: center;
+
+
+  margin-left: -30vw; 
+  align-self: flex-start; 
+}
+
 
 .custom-button-2 {
   padding: 18px 40px;
@@ -448,9 +474,12 @@ body {
   border: 2px solid rgb(0, 0, 0);
   border-radius: 30px;
   cursor: pointer;
-  margin-right: 200px;
-  margin-left: 0;
+
+  /* alinhamento perfeito */
+  display: block;
+  margin: 20px auto 0 auto;
 }
+
 
 .bg-slide-4 {
   background-color: #b49b2c40;
@@ -521,9 +550,17 @@ body {
 /*Footer*/
 
 footer {
-  background-color: black;
-  color: white;
+  background-color: black !important;
   text-align: center;
+  padding: 20px 0; /* adiciona espaço dentro */
+  min-height: 60px; /* garante que fica visível */
+}
+.centered-text-6{
+  color:white;
+}
+
+.centered-text-6 h4{
+  font-size:0px;
 }
 
 .social-icons {
@@ -531,7 +568,7 @@ footer {
 }
 
 .social-icons a {
-  color: grey;
+  color: rgb(179, 179, 179);
   margin: 0 10px;
   font-size: 24px;
   text-decoration: none;
@@ -544,59 +581,65 @@ footer {
 
 /*Seta*/
 .back-to-top {
+  font-size: 2.5rem;
+  color: black;
   position: absolute;
   bottom: 20px;
-  font-size: 2rem;
-  text-decoration: none;
-  background-color: transparent;
-  color: rgb(0, 0, 0);
-  padding: 0.5rem 0.8rem;
-  border-radius: 4px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
   z-index: 999;
-  transition: opacity 0.3s ease;
 }
 
-.back-to-top.left {
-  left: 20px;
-}
-
-.back-to-top.right {
-  right: 20px;
-}
-
-.back-to-top.right-3 {
-  position: absolute;
-  bottom: 20px;
-  font-size: 2rem;
-  text-decoration: none;
-  background-color: transparent;
-  color: rgb(255, 255, 255);
-  padding: 0.5rem 0.8rem;
-  border-radius: 4px;
-  z-index: 999;
-  transition: opacity 0.3s ease;
-}
-
-/* Esconda todas as setas inicialmente */
-.back-to-top {
-  display: none;
-}
-
-/* Quando ativar, seta aparecerá */
+/* Quando o JS ativa → aparece e fica clicável */
 .back-to-top.active {
-  display: block;
+  opacity: 1;
+  pointer-events: auto;
 }
 
-/* Modal - inicialmente escondido */
-.modal {
-  display: none; /* importante: modal só aparece quando JS mudar pra block */
-  position: fixed; /* fica fixo na tela */
-  z-index: 1000; /* na frente de tudo */
-  left: 0;
-  top: 0;
-  width: 100%; /* tela toda */
-  height: 100%; /* tela toda */
-  overflow: auto; /* se conteúdo for maior que a tela */
-  background-color: rgba(0, 0, 0, 0.5); /* fundo semi-transparente */
+/* Posições */
+.back-to-top.left {
+  left: 30px;
 }
 
+.back-to-top.right,
+.back-to-top.right-3 {
+  right: 30px;
+}
+
+/* Cor da seta do slide 3 → branca */
+#slide3 .back-to-top {
+  color: white;
+}
+
+.slide {
+  position: relative; /* <-- ESSENCIAL para posicionamento absoluto da seta dentro do slide */
+}
+
+/* Regras únicas e finais para as setas */
+.back-to-top {
+  font-size: 2.5rem;
+  text-decoration: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  position: absolute; /* posicionado dentro do .slide agora */
+  bottom: 20px;
+  z-index: 999;
+  transform: translateY(6px);
+}
+
+/* Quando JS adiciona .active */
+.back-to-top.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* Posições das setas */
+.back-to-top.left { left: 30px; }
+.back-to-top.right,
+.back-to-top.right-3 { right: 30px; }
+
+/* Cor branca para slide3, caso o fundo seja escuro */
+#slide3 .back-to-top { color: white; }

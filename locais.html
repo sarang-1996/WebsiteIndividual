@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locais</title>
+    <link rel="stylesheet" href="locais.css">
+</head>
+<body>
+
+<header class="main-header">
+   <div class="logo">
+    <span></span>
+</div>
+    <nav class="nav-container">
+        <ul class="nav">
+            <li><a href="acomodação.html" class="nav-link">ACOMODAÇÃO</a></li>
+            <li><a href="Locais.html" class="nav-link">LOCAIS</a></li>
+            <li><a href="Blog.html" class="nav-link">BLOG</a></li>
+            <li><a href="#" class="nav-link active">CONTATOS</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="locais-section">
+
+    <div class="filter-box">
+ <label>Escolha o país:</label>
+<select id="pais">
+    <option value="Portugal">Portugal</option>
+    <option value="Espanha">Espanha</option>
+</select>
+
+<label>Escolha a cidade:</label>
+<select id="cidade">
+    <option value="Porto">Porto</option>
+    <option value="Lisboa">Lisboa</option>
+    <option value="Barcelona">Barcelona</option>
+    <option value="Madrid">Madrid</option>
+</select>
+
+<button id="btnVer" class="btn-ver">Ver</button>
+</div> <!-- ← fecha a filter-box aqui! -->
+
+<div class="map-box" id="mapBox">
+    <iframe id="mapFrame" allowfullscreen="" loading="lazy"></iframe>
+
+    <div class="info-box">
+        <h3 id="tituloLocal"></h3>
+        <p id="morada"></p>
+        <p id="email"></p>
+    </div>
+</div>
+
+</section>
+
+<script>
+const locaisData = {
+    "Portugal": {
+        "Porto": {
+            mapa: "Porto Portugal",
+            morada: "Rua da Alegria, 686",
+            email: "livingaround_porto@living.com"
+        },
+        "Lisboa": {
+            mapa: "Lisboa Portugal",
+            morada: "Avenida Central, 2500",
+            email: "livingaround_lisboa@living.com"
+        }
+    },
+        "Espanha": {
+        "Madrid": {
+            mapa: "Madrid Espanha",
+            morada: "Calle Gran Vía, 123",
+            email: "livingaround_madrid@living.com"
+        },
+        "Barcelona": {
+            mapa: "Barcelona Espanha",
+            morada: "Avinguda Diagonal, 450",
+            email: "livingaround_barcelona@living.com"
+        }
+    }
+};
+
+document.getElementById("btnVer").addEventListener("click", () => {
+    const pais = document.getElementById("pais").value;
+    const cidade = document.getElementById("cidade").value;
+
+    const dados = locaisData[pais][cidade];
+
+    // Atualiza MAPA dinamicamente
+    document.getElementById("mapFrame").src = 
+        `https://www.google.com/maps?q=${encodeURIComponent(dados.mapa)}&output=embed`;
+
+    // Atualiza texto
+    document.getElementById("tituloLocal").innerText = `LIVING AROUND - ${cidade}`;
+    document.getElementById("morada").innerText = dados.morada;
+    document.getElementById("email").innerText = dados.email;
+
+    // Mostrar quando tiver info válida
+    document.getElementById("mapBox").style.display = "block";
+});
+</script>
+
+</body>
+</html>
