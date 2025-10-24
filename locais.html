@@ -1,106 +1,165 @@
 <!DOCTYPE html>
 <html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Locais</title>
-    <link rel="stylesheet" href="locais.css">
-</head>
-<body>
+    <link rel="stylesheet" href="locais.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap");
+    </style>
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="logo">
+        <span></span>
+      </div>
 
-<header class="main-header">
-   <div class="logo">
-    <span></span>
-</div>
-    <nav class="nav-container">
+      <!-- Botão Hamburger -->
+      <button class="hamburger" id="menu-toggle" aria-label="Abrir menu">
+        ☰
+      </button>
+
+      <nav class="nav-container">
         <ul class="nav">
-            <li><a href="acomodação.html" class="nav-link">ACOMODAÇÃO</a></li>
-            <li><a href="Locais.html" class="nav-link">LOCAIS</a></li>
-            <li><a href="Blog.html" class="nav-link">BLOG</a></li>
-            <li><a href="#" class="nav-link active">CONTATOS</a></li>
+          <li><a href="acomodação.html" class="nav-link">ACOMODAÇÃO</a></li>
+          <li><a href="#" class="nav-link active">LOCAIS</a></li>
+          <li><a href="index.html#slide5" class="nav-link">BLOG</a></li>
+          <li><a href="contactos.html" class="nav-link">CONTACTOS</a></li>
         </ul>
-    </nav>
-</header>
+      </nav>
+    </header>
 
-<section class="locais-section">
+    <section class="locais-section">
+      <div class="filter-box">
+        <label>Escolha o país:</label>
+        <select id="pais">
+          <option value="" disabled selected>País</option>
+          <!-- opção placeholder -->
+          <option value="Portugal">Portugal</option>
+          <option value="Espanha">Espanha</option>
+        </select>
 
-    <div class="filter-box">
- <label>Escolha o país:</label>
-<select id="pais">
-    <option value="Portugal">Portugal</option>
-    <option value="Espanha">Espanha</option>
-</select>
+        <label>Escolha a cidade:</label>
+        <select id="cidade">
+          <option value="" disabled selected>Cidade</option>
+          <!-- placeholder -->
+          <!-- opções serão adicionadas pelo JS -->
+        </select>
 
-<label>Escolha a cidade:</label>
-<select id="cidade">
-    <option value="Porto">Porto</option>
-    <option value="Lisboa">Lisboa</option>
-    <option value="Barcelona">Barcelona</option>
-    <option value="Madrid">Madrid</option>
-</select>
+        <button id="btnVer" class="btn-ver">Ver</button>
+      </div>
+      <!-- ← fecha a filter-box aqui! -->
 
-<button id="btnVer" class="btn-ver">Ver</button>
-</div> <!-- ← fecha a filter-box aqui! -->
+      <div class="map-box" id="mapBox">
+        <iframe id="mapFrame" allowfullscreen="" loading="lazy"></iframe>
 
-<div class="map-box" id="mapBox">
-    <iframe id="mapFrame" allowfullscreen="" loading="lazy"></iframe>
-
-    <div class="info-box">
-        <h3 id="tituloLocal"></h3>
-        <p id="morada"></p>
-        <p id="email"></p>
-    </div>
-</div>
-
-</section>
-
-<script>
-const locaisData = {
-    "Portugal": {
-        "Porto": {
+        <div class="info-box">
+          <h3 id="tituloLocal"></h3>
+          <p id="morada"></p>
+          <p id="codigoPostal"></p>
+          <p id="email"></p>
+        </div>
+      </div>
+    </section>
+    <script>
+      const locaisData = {
+        Portugal: {
+          Porto: {
             mapa: "Porto Portugal",
             morada: "Rua da Alegria, 686",
-            email: "livingaround_porto@living.com"
-        },
-        "Lisboa": {
+            codigoPostal: "4000-123",
+            email: "livingaround_porto@living.com",
+          },
+          Lisboa: {
             mapa: "Lisboa Portugal",
             morada: "Avenida Central, 2500",
-            email: "livingaround_lisboa@living.com"
-        }
-    },
-        "Espanha": {
-        "Madrid": {
+            codigoPostal: "2500-000",
+            email: "livingaround_lisboa@living.com",
+          },
+        },
+        Espanha: {
+          Madrid: {
             mapa: "Madrid Espanha",
             morada: "Calle Gran Vía, 123",
-            email: "livingaround_madrid@living.com"
-        },
-        "Barcelona": {
+            codigoPostal: "28013",
+            email: "livingaround_madrid@living.com",
+          },
+          Barcelona: {
             mapa: "Barcelona Espanha",
             morada: "Avinguda Diagonal, 450",
-            email: "livingaround_barcelona@living.com"
+            codigoPostal: "08005",
+            email: "livingaround_barcelona@living.com",
+          },
+        },
+      };
+
+      window.addEventListener("DOMContentLoaded", () => {
+        const paisSelect = document.getElementById("pais");
+        const cidadeSelect = document.getElementById("cidade");
+        const btnVer = document.getElementById("btnVer");
+        const mapFrame = document.getElementById("mapFrame");
+        const tituloLocal = document.getElementById("tituloLocal");
+        const morada = document.getElementById("morada");
+        const email = document.getElementById("email");
+        const mapBox = document.getElementById("mapBox");
+
+        // Função para atualizar cidades
+        function atualizarCidades() {
+          const paisSelecionado = paisSelect.value;
+
+          // Limpa opções
+          cidadeSelect.innerHTML = "";
+
+          // Adiciona placeholder
+          const placeholder = document.createElement("option");
+          placeholder.value = "";
+          placeholder.textContent = "Cidade";
+          placeholder.disabled = true;
+          placeholder.selected = true;
+          cidadeSelect.appendChild(placeholder);
+
+          // Só adiciona cidades se houver país selecionado
+          if (!paisSelecionado) return;
+
+          Object.keys(locaisData[paisSelecionado]).forEach((cidade) => {
+            const option = document.createElement("option");
+            option.value = cidade;
+            option.textContent = cidade;
+            cidadeSelect.appendChild(option);
+          });
         }
-    }
-};
+        // Atualiza ao carregar
+        atualizarCidades();
 
-document.getElementById("btnVer").addEventListener("click", () => {
-    const pais = document.getElementById("pais").value;
-    const cidade = document.getElementById("cidade").value;
+        // Atualiza ao mudar o país
+        paisSelect.addEventListener("change", atualizarCidades);
 
-    const dados = locaisData[pais][cidade];
+        // Botão Ver
+        btnVer.addEventListener("click", () => {
+          const pais = paisSelect.value;
+          const cidade = cidadeSelect.value;
+          const dados = locaisData[pais][cidade];
 
-    // Atualiza MAPA dinamicamente
-    document.getElementById("mapFrame").src = 
-        `https://www.google.com/maps?q=${encodeURIComponent(dados.mapa)}&output=embed`;
+          mapFrame.src = `https://www.google.com/maps?q=${encodeURIComponent(
+            dados.mapa
+          )}&output=embed`;
+          tituloLocal.innerText = `LIVING AROUND - ${cidade}`;
+          morada.innerText = dados.morada;
+          document.getElementById("codigoPostal").innerText =
+            dados.codigoPostal;
+          email.innerText = dados.email;
+          mapBox.style.display = "block";
+        });
+      });
 
-    // Atualiza texto
-    document.getElementById("tituloLocal").innerText = `LIVING AROUND - ${cidade}`;
-    document.getElementById("morada").innerText = dados.morada;
-    document.getElementById("email").innerText = dados.email;
+      // Hamburger toggle
+      const menuToggle = document.getElementById("menu-toggle");
+      const nav = document.querySelector(".nav");
 
-    // Mostrar quando tiver info válida
-    document.getElementById("mapBox").style.display = "block";
-});
-</script>
-
-</body>
+      menuToggle.addEventListener("click", () => {
+        nav.classList.toggle("active");
+      });
+    </script>
+  </body>
 </html>

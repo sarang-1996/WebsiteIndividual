@@ -1,217 +1,306 @@
 @import url("https://fonts.googleapis.com/css2?family=Jura:wght@300;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Jura:wght@300..700&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: "Jura", sans-serif;
-    min-height: 100vh;
-    background: url('contactosbg.jpg') center bottom/cover no-repeat fixed;
-    display: flex;
-    flex-direction: column;
-    position: relative;
+  font-family: "Jura", sans-serif;
+  min-height: 100vh;
+  background: url("contactosbg.jpg") center bottom/cover no-repeat fixed;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 body::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.65);
-    z-index: 0;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 0;
 }
 
 /********** HEADER **********/
 /********** HEADER IDÊNTICO AO PRINT **********/
 .main-header {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 30px 80px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    z-index: 10;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 30px 80px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  z-index: 10;
 }
 
 .logo {
-    position: absolute;
-    left: 40px;
-    top: 25px;
-    width: 30px;
-    height: 32px;
+  position: absolute;
+  left: 40px;
+  top: 25px;
+  width: 30px;
+  height: 32px;
 }
 
 .logo::before,
-.logo::after,
-.logo span {
-    content: "";
-    position: absolute;
-    width: 6px;
-    height: 32px;
-    background: rgba(210, 210, 210, 0.55); /* Mesma cor nas 3 */
-    border-radius: 4px;
-    top: 0;
+.logo span,
+.logo::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 32px;
+  background: #ffffff66; /* Branco Puro */
+  border-radius: 4px;
+  top: 0; /* Começa no topo do container .logo */
 }
 
 /* Barra esquerda */
 .logo::before {
-    left: 0px;
-    transform: skew(-18deg);
+  left: 0px;
+  transform: skew(-20deg);
 }
 
-/* Barra do meio */
+/* Barra do meio (agora a única <span>) */
 .logo span {
-    left: 10px;
-    transform: skew(-10deg);
+  left: 10px;
+  transform: skew(-10deg);
 }
 
 /* Barra direita */
 .logo::after {
-    left: 20px;
-    transform: skew(-5deg);
+  left: 20px;
+  transform: skew(-1deg);
 }
 
-
 .nav {
-    list-style: none;
-    display: flex;
-    gap: 45px;
-    margin-right: 40px;
+  list-style: none;
+  display: flex;
+  gap: 45px;
+  margin-right: 40px;
 }
 
 .nav-link {
-    text-decoration: none;
-    color: #ffffff;
-    font-weight: 300;
-    font-size: 15px;
-    letter-spacing: 2px;
-    transition: .25s ease-in-out;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 300;
+  font-size: 15px;
+  letter-spacing: 2px;
+  transition: 0.25s ease-in-out;
+  font-family: Josefin Slab;
+  font-weight: 700;
 }
 
 .nav-link:hover,
 .nav-link.active {
-    color: #dedede;
+  color: #dedede;
 }
 
 /********** CONTENT **********/
 .contato-section {
-    flex: 1;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 100px;
-    position: relative;
-    z-index: 5;
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 100px;
+  position: relative;
+  z-index: 5;
 }
 
 /* ✅ Form */
 .form-box {
-    background: rgba(0,0,0,0.88);
-    padding: 40px;
-    width: 370px;
-    border-radius: 20px;
+  background: rgba(0, 0, 0, 0.88);
+  padding: 40px;
+  width: 370px;
+  border-radius: 20px;
 }
 
 label {
-    color: #e7e7e7;
-    font-size: 14px;
-    margin-bottom: 5px;
-    display: block;
+  color: #e7e7e7;
+  font-size: 14px;
+  margin-bottom: 5px;
+  display: block;
 }
 
-input, textarea {
-    width: 100%;
-    background: white;
-    border: none;
-    border-radius: 14px;
-    padding: 12px;
-    margin-bottom: 16px;
-    font-size: 15px;
+input,
+textarea {
+  width: 100%;
+  background: white;
+  border: none;
+  border-radius: 14px;
+  padding: 12px;
+  margin-bottom: 16px;
+  font-size: 15px;
 }
 
 textarea {
-    height: 115px;
-    resize: none;
+  height: 115px;
+  resize: none;
 }
 
 /* ✅ Botão igual print */
 .btn {
-    width: 100%;
-    padding: 12px;
-    border-radius: 25px;
-    border: 2px solid #cecece;
-    background: transparent;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
+  width: 100%;
+  padding: 12px;
+  border-radius: 25px;
+  border: 2px solid #cecece;
+  background: transparent;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 /* ✅ Frase da direita */
 .quote-box {
-    width: 300px;
-    text-align: right;
-    color: white;
-    margin-bottom: 100px;
+  width: 300px;
+  text-align: right;
+  color: white;
+  margin-bottom: 100px;
+  font-family: Jura;
+  font-weight: 700;
 }
 
 blockquote {
-    font-size: 16px;
-    line-height: 22px;
+  font-size: 16px;
+  line-height: 22px;
 }
 
 .quote-box p {
-    font-size: 13px;
-    margin-top: 10px;
+  font-size: 13px;
+  margin-top: 10px;
 }
 
 .modal {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.55);
-    backdrop-filter: blur(3px);
-    z-index: 9999;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(3px);
+  z-index: 9999;
 }
 
 .modal-content {
-    background: white;
-    color: #333;
-    padding: 25px 30px;
-    border-radius: 20px;
-    text-align: center;
+  background: white;
+  color: #333;
+  padding: 25px 30px;
+  border-radius: 20px;
+  text-align: center;
 
-    /* ✅ deixe ela menor */
-    width: 400px;
-    max-width: 90%;
+  /* ✅ deixe ela menor */
+  width: 400px;
+  max-width: 90%;
 
-    /* melhorar visual */
-    border: 3px solid #3ca3ff;
-    box-shadow: 0 0 30px rgba(0,0,0,0.25);
+  /* melhorar visual */
+  border: 3px solid #3ca3ff;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.25);
 }
 
 .ok-btn {
-    width: 120px;
-    margin-top: 10px;
-    background: #64b4fd;
-    border: none;
-    border-radius: 30px;
-    color: white;
-    padding: 10px 0;
-    font-size: 14px;
-    font-weight: 500;
+  width: 120px;
+  margin: 10px auto 0 auto; /* topo 10px, horizontal auto → centraliza */
+  background: #64b4fd;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  padding: 10px 0;
+  font-size: 14px;
+  font-weight: 500;
+  display: block; /* necessário para margin auto funcionar */
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.9); }
-    to { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Hamburger Mobile */
+.hamburger {
+  display: block;
+  font-size: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  position: absolute;
+  right: 40px;
+  top: 30px;
+  z-index: 10001;
+}
+
+@media (max-width: 768px) {
+  /* Navbar oculto por defeito */
+  .nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin-top: 10px;
+    background: rgba(0, 0, 0, 0.85);
+    border-radius: 12px;
+    padding: 15px 0;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    z-index: 999;
+  }
+
+  /* Mostra quando clicado */
+  .nav.active {
+    display: flex;
+  }
+
+  .nav li a {
+    font-size: 16px;
+    padding: 10px 0;
+    text-align: center;
+    color: #fff;
+  }
+
+  /* Header flex em coluna */
+  .main-header {
+    justify-content: flex-start;
+    padding: 20px 30px;
+  }
+
+  /* Logo menor e alinhado */
+  .logo {
+    left: 20px;
+    top: 20px;
+  }
+
+  /* Form e quote empilhados */
+  .contato-section {
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+  }
+
+  .form-box {
+    width: 100%;
+    max-width: 370px;
+    margin-bottom: 20px;
+  }
+
+  .quote-box {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+  }
 }

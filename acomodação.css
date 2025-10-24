@@ -1,0 +1,313 @@
+/* --- Fonts --- */
+@import url("https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100..700;1,100..700&display=swap");
+
+/* Reset geral */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body::before {
+  content: "";
+  display: table; /* Previne colapso de margens */
+}
+
+/* --- Hero e Navbar --- */
+header.hero {
+  margin: 0;
+  padding: 0;
+  display: block;
+  border-top: 1px solid transparent;
+}
+
+.hero {
+  position: relative;
+  height: 520px;
+  overflow: hidden;
+  color: white;
+  font-family: "Josefin Slab";
+  width: 100vw;
+}
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 35px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 5;
+}
+
+.nav {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav li a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.9);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-family: Jura;
+  transition: 0.3s;
+}
+
+.nav li a:hover {
+  opacity: 0.6;
+}
+
+.logo {
+  position: relative;
+  width: 30px;
+  height: 32px;
+}
+
+.logo::before,
+.logo::after,
+.logo span {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 32px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 4px;
+  top: 0;
+}
+.logo::before {
+  left: 0;
+  transform: skew(-18deg);
+}
+.logo span {
+  left: 10px;
+  transform: skew(-10deg);
+}
+.logo::after {
+  left: 20px;
+  transform: skew(-5deg);
+}
+
+/* Hero background */
+.hero-bg {
+  position: relative;
+  height: 520px;
+  width: 100%;
+  background-image: url("acomodação.jpg");
+  background-size: cover;
+  background-position: center 40%;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.hero-bg .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 2;
+}
+
+/* Hero text */
+.hero-text {
+  position: absolute;
+  bottom: 160px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.75);
+  padding: 1px 70px 25px 70px;
+  z-index: 4;
+  width: 100%;
+  font-family: "Josefin Slab";
+}
+
+.hero-text h1 {
+  margin: 0 !important;
+  font-size: 72px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+}
+
+/* --- Page Content --- */
+.page-content {
+  background-color: #b49b2c40;
+  padding: 50px;
+}
+
+/* --- Cards --- */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(260px, 430px));
+  grid-auto-rows: 660px;
+  gap: 150px;
+  justify-content: center;
+  padding: 40px 0;
+  background-color: #b49b2c40;
+  font-family: Jura;
+}
+
+.card {
+  background-color: #d9d9d9;
+  border-radius: 35px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 100%;
+  font-family: Jura;
+}
+
+.card img {
+  width: 400px;
+  height: 288px;
+  border-radius: 35px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.card h2 {
+  font-size: 30px;
+  margin: 10px 0;
+}
+.card p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.card ul {
+  list-style: disc;
+  padding-left: 20px;
+  font-size: 16px;
+  text-align: left;
+}
+
+.more-info-btn {
+  background-color: transparent;
+  border: none;
+  color: black;
+  font-family: "Josefin Slab", serif;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+}
+
+.more-info-btn:hover {
+  color: #333;
+}
+
+/* --- Footer --- */
+footer {
+  background-color: black !important;
+  text-align: center;
+  padding: 20px 0;
+  min-height: 30px;
+  font-family: Jura;
+}
+
+footer .centered-text {
+  color: white;
+  font-size: 10px;
+}
+footer .social-icons {
+  margin: 10px 0;
+}
+footer .social-icons a {
+  color: rgb(179, 179, 179);
+  margin: 0 10px;
+  font-size: 24px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* --- Hamburger / Mobile --- */
+.hamburger {
+  display: none;
+  font-size: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: black;
+}
+
+@media (max-width: 768px) {
+  /* Navbar vertical + padding menor */
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+  }
+
+  /* Hamburger visível */
+  .hamburger {
+    display: block;
+    margin-left: auto;
+  }
+
+  /* Nav escondida */
+  .nav {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  /* Nav ativa mostra links */
+  .nav.active {
+    display: flex;
+  }
+
+  .nav li a {
+    font-size: 16px;
+    padding: 10px 0;
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+
+  .logo {
+    margin-bottom: 10px;
+  }
+
+  /* Hero responsivo */
+  .hero-text h1 {
+    font-size: 2rem;
+    padding: 0 20px;
+  }
+  .hero-bg {
+    height: 50vh;
+  }
+
+  /* Cards responsivos */
+  .cards-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+  }
+}
