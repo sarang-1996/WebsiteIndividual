@@ -7,6 +7,11 @@ Tecnologias: HTML, CSS, JavaScript, Bootstrap
 Design de referência: [Figma](https://www.figma.com/design/j3a8zRO9N8fYDaFr1FkmKr/LandPage?node-id=0-1&p=f&t=qdoFcNO7xWlgknul-0)
 
 O Website funcional pode ser acessado através do seguinte link: https://sarang-1996.github.io/WebsiteIndividual/ .
+
+
+
+
+
 ----- // -----
 Descrição do Projeto
 
